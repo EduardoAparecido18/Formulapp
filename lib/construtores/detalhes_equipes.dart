@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
 class detalhesEquipes extends StatelessWidget {
-  const detalhesEquipes(
-      {super.key, required this.nomeEquipe, required this.nacionalidade});
+  const detalhesEquipes({
+    super.key,
+    required this.nomeEquipe,
+    required this.nacionalidade,
+    required this.logo,
+    required this.carroPng,
+    required this.descricaoEquipes,
+  });
 
   final String nomeEquipe;
   final String nacionalidade;
+  final String logo;
+  final String carroPng;
+  final String descricaoEquipes;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +40,6 @@ class detalhesEquipes extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          
         ],
       ),
     );

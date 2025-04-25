@@ -10,7 +10,7 @@ class Equipes {
       required this.nacionalidade,
       required this.urlEquipe});
 
-  factory Equipes.fromjson(Map<String, dynamic> json) {
+  factory Equipes.fromJson(Map<String, dynamic> json) {
     return Equipes(
         idEquipe: json["constructorId"] ?? "",
         nomeEquipe: json["name"] ?? "",

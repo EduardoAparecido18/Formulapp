@@ -1,8 +1,10 @@
+import 'package:f1app/construtores/dadosExtrasEquipes.dart';
 import 'package:f1app/construtores/detalhes_equipes.dart';
 import 'package:flutter/material.dart';
 import 'apiEquipes.dart';
 import 'construtores.dart';
 
+// ignore: camel_case_types
 class equipesTela extends StatefulWidget {
   const equipesTela({super.key});
 
@@ -10,9 +12,12 @@ class equipesTela extends StatefulWidget {
   State<equipesTela> createState() => _equipesTelaState();
 }
 
+// ignore: camel_case_types
 class _equipesTelaState extends State<equipesTela> {
   List<Equipes> _equipes = [];
+  // ignore: unused_field
   bool _loading = true;
+  // ignore: unused_field
   String? _mensagemErro;
   @override
   void initState() {
@@ -23,6 +28,7 @@ class _equipesTelaState extends State<equipesTela> {
   Future<void> fetchEquipes() async {
     try {
       List<Equipes> equipes = await Apiequipes.getEquipes();
+
       setState(() {
         _equipes = equipes;
         _loading = false;
@@ -35,28 +41,62 @@ class _equipesTelaState extends State<equipesTela> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_element
     void mostrarDetalhesEquipes(BuildContext context, Equipes equipes) {
+      final dadosExtrasEquipes = extrasEquipes[equipes.idEquipe];
       showModalBottomSheet(
           isScrollControlled: true,
           context: context,
           builder: (context) {
             return FractionallySizedBox(
-              //tamanho do bottomsheet
-              heightFactor: 0.8,
-              child: detalhesEquipes(
+                //tamanho do bottomsheet
+                heightFactor: 0.8,
+                child: detalhesEquipes(
                   nomeEquipe: equipes.nomeEquipe,
-                  nacionalidade: equipes.nacionalidade),
-            );
+                  nacionalidade: equipes.nacionalidade,
+                  logo: dadosExtrasEquipes?['logoEquipe'] ?? "",
+                  carroPng: dadosExtrasEquipes?['imagemCarro'] ?? "",
+                  descricaoEquipes: dadosExtrasEquipes?['textoSobre'] ??
+                      "Não tem nada sobre essa equipe!",
+                ));
           });
     }
 
     return Scaffold(
-        body: _equipes.isEmpty
+        body: _loading
             ? const Center(child: CircularProgressIndicator())
-            : Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xfffcdc8cd),
-                ),
-              ));
+            : _equipes.isEmpty
+                ? Center(
+                    child: Text(_mensagemErro ?? "nenhuma equipe encontrada"),
+                  )
+                : Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFfcdc8cd),
+                    ),
+                    child: ListView.builder(
+                      itemCount: _equipes.length,
+                      itemBuilder: (context, index) {
+                        final equipes = _equipes[index];
+                        final dadosExtrasEquipes =
+                            extrasEquipes[equipes.idEquipe];
+                        final logoEquipe =
+                            dadosExtrasEquipes?['logoEquipe'] ?? "";
+                        // ignore: prefer_const_constructors
+                        return ListTile(
+                          // ignore: prefer_const_constructors
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 14,
+                          ),
+                          leading: CircleAvatar(
+                            radius: 30,
+                            child: Image.network(logoEquipe),
+                          ),
+                          title: Text(equipes.nomeEquipe),
+                          onTap: () {},
+                        );
+                      },
+                    ),
+                  ));
   }
 }

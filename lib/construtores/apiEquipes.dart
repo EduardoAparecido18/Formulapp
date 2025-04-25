@@ -9,12 +9,15 @@ class Apiequipes {
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      final List equipesJson = data["MRData"]["EquipestTable"]["equipes"];
+      final List equipesJson =
+          data["MRData"]["ConstructorTable"]["Constructors"];
 
       if (data["MRData"] == null ||
-          data["MRData"]["EquipesTable"] == null ||
-          data["MRData"]["EquipesTable"]["equipes"]) {}
-      return equipesJson.map((json) => Equipes.fromjson((json))).toList();
+          data["MRData"]["ConstructorTable"] == null ||
+          data["MRData"]["ConstructorTable"]["Constructors"] == null) {
+        throw Exception("dados invalidos retornados pela api");
+      }
+      return equipesJson.map((json) => Equipes.fromJson(json)).toList();
     } else {
       throw Exception("OCORREU UM ERRO AO BUSCAR DADOS DOS CONSTRUTORES");
     }

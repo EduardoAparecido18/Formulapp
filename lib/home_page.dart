@@ -1,3 +1,4 @@
+import 'package:f1app/construtores/tela_equipes.dart';
 import 'package:f1app/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
 import 'circuitos/tela_circuitos.dart';
@@ -18,11 +19,7 @@ class _HomePageState extends State<HomePage> {
 
     const telaPilotos(),
 
-    const Center(
-        child: Text(
-      'Equipes',
-      style: TextStyle(fontSize: 20),
-    ))
+    const equipesTela(),
   ];
 
   @override
