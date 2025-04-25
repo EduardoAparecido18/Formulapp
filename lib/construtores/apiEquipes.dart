@@ -19,7 +19,7 @@ class Apiequipes {
       }
       return equipesJson.map((json) => Equipes.fromJson(json)).toList();
     } else {
-      throw Exception("OCORREU UM ERRO AO BUSCAR DADOS DOS CONSTRUTORES");
+      throw Exception("OCORREU UM ERRO AO BUSCAR DADOS DOS CONSTRUTORE");
     }
   }
 }
