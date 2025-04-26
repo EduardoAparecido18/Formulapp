@@ -25,11 +25,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: use_full_hex_values_for_flutter_colors
-      backgroundColor: const Color(0xfffcdc8cd),
+      //backgroundColor: Theme.of(context).colorScheme.onSurface,
       appBar: AppBar(
-        // ignore: use_full_hex_values_for_flutter_colors
-        backgroundColor: const Color(0xfffcdc8cd),
+        // backgroundColor: Theme.of(context).colorScheme.onSurface,
         leading: Padding(
           padding: const EdgeInsets.all(1.0),
           child: Image.network(
@@ -43,9 +41,9 @@ class _HomePageState extends State<HomePage> {
         borderRadius: const BorderRadius.vertical(
             top: Radius.circular(30), bottom: Radius.circular(30)),
         child: BottomNavigationBar(
-            backgroundColor: const Color.fromARGB(255, 59, 58, 59),
-            selectedItemColor: const Color.fromARGB(255, 148, 148, 148),
-            unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+            //backgroundColor: Theme.of(context).colorScheme.onPrimary,
+            //selectedItemColor: Theme.of(context).colorScheme.onSecondary,
+            //unselectedItemColor: Theme.of(context).colorScheme.onTertiary,
             elevation: 10,
             currentIndex: _currentIndex,
             onTap: (index) {

@@ -1,3 +1,4 @@
+import 'package:f1app/colors/temas.dart';
 import 'package:f1app/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Formula1'),
-      home: const HomePage(),
+      theme: lightMode,
+      darkTheme: darkMode,
+      home: HomePage(),
     );
   }
 }

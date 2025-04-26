@@ -1,3 +1,6 @@
+import 'dart:collection';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class detalhesEquipes extends StatelessWidget {
@@ -24,7 +27,7 @@ class detalhesEquipes extends StatelessWidget {
           ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.network(
-                "",
+                logo,
                 height: 200,
                 width: 200,
                 fit: BoxFit.cover,
@@ -40,6 +43,16 @@ class detalhesEquipes extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          Text(
+            nacionalidade,
+            style: const TextStyle(
+              fontSize: 16,
+            ),
+          ),
+          const SizedBox(height: 5),
+          ClipRRect(
+            child: Image.network(carroPng),
+          )
         ],
       ),
     );

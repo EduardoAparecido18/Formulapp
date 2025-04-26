@@ -1,3 +1,4 @@
+import 'package:f1app/colors/equipesCores.dart';
 import 'package:f1app/construtores/dadosExtrasEquipes.dart';
 import 'package:f1app/construtores/detalhes_equipes.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class equipesTela extends StatefulWidget {
 // ignore: camel_case_types
 class _equipesTelaState extends State<equipesTela> {
   List<Equipes> _equipes = [];
+
   // ignore: unused_field
   bool _loading = true;
   // ignore: unused_field
@@ -44,7 +46,9 @@ class _equipesTelaState extends State<equipesTela> {
     // ignore: unused_element
     void mostrarDetalhesEquipes(BuildContext context, Equipes equipes) {
       final dadosExtrasEquipes = extrasEquipes[equipes.idEquipe];
+      final backgroundEquipes = coresEquipes[equipes.idEquipe] ?? Colors.pink;
       showModalBottomSheet(
+          backgroundColor: backgroundEquipes,
           isScrollControlled: true,
           context: context,
           builder: (context) {
@@ -71,7 +75,7 @@ class _equipesTelaState extends State<equipesTela> {
                   )
                 : Container(
                     decoration: const BoxDecoration(
-                      color: Color(0xFFfcdc8cd),
+                      color: Color(0xFFfcdc8c),
                     ),
                     child: ListView.builder(
                       itemCount: _equipes.length,
@@ -81,7 +85,9 @@ class _equipesTelaState extends State<equipesTela> {
                             extrasEquipes[equipes.idEquipe];
                         final logoEquipe =
                             dadosExtrasEquipes?['logoEquipe'] ?? "";
-                        // ignore: prefer_const_constructors
+                        final equipesBackground =
+                            coresEquipes[equipes.idEquipe] ?? Colors.amber;
+
                         return ListTile(
                           // ignore: prefer_const_constructors
                           contentPadding: EdgeInsets.symmetric(
@@ -89,11 +95,20 @@ class _equipesTelaState extends State<equipesTela> {
                             horizontal: 14,
                           ),
                           leading: CircleAvatar(
+                            backgroundColor: equipesBackground,
                             radius: 30,
-                            child: Image.network(logoEquipe),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Image.asset(
+                                logoEquipe,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           ),
                           title: Text(equipes.nomeEquipe),
-                          onTap: () {},
+                          onTap: () {
+                            mostrarDetalhesEquipes(context, equipes);
+                          },
                         );
                       },
                     ),

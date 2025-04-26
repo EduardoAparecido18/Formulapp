@@ -21,7 +21,7 @@ class TelaCircuitos extends StatelessWidget {
             final pista = circuitos[index];
             return ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xffb4afb4),
+                    // backgroundColor: Theme.of(context).colorScheme.onSurface,
                     textStyle: const TextStyle(fontSize: 15),
                     elevation: 9,
                     shape: const RoundedRectangleBorder(
@@ -29,6 +29,7 @@ class TelaCircuitos extends StatelessWidget {
                             BorderRadius.all(Radius.elliptical(50, 50)))),
                 onPressed: () {
                   showModalBottomSheet(
+                      // backgroundColor: Theme.of(context).colorScheme.primary,
                       isScrollControlled: true,
                       context: context,
                       builder: (context) {

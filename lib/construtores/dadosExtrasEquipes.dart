@@ -1,78 +1,69 @@
 final Map<String, Map<String, String>> extrasEquipes = {
   "alpine": {
-    "logoEquipe":
-        "https://logodownload.org/wp-content/uploads/2022/03/alpine-f1-logo-2-2048x1872.png",
+    "logoEquipe": "assets/images/alpine.png.png",
     "imagemCarro":
         "https://www.lequipe.fr/special/Formule-1/guide/v5/f1-2023/images/2023-cars-ALPINE-CAR.png",
     "textoSobre":
         "A Alpine é a nova identidade da Renault, que estreou na F1 em 1977. Conquistou 2 títulos de pilotos e construtores com Fernando Alonso (2005–2006). Voltou com força como Alpine em 2021, focando em se tornar uma equipe de ponta novamente."
   },
   "aston_martin": {
-    "logoEquipe":
-        "https://fabrikbrands.com/wp-content/uploads/Aston-Martin-F1-Logo-3.png",
+    "logoEquipe": "assets/images/aston.png",
     "imagemCarro":
         "https://e00-especiales-marca.uecdn.es/motor/images/formula1/escuderias/2023/gral/coche-astonmartin.png",
     "textoSobre":
         "Reestreou em 2021, mas tem raízes na F1 desde 1959. Com investimento pesado e a contratação de Sebastian Vettel, se estabeleceu como candidata a crescer. Em 2023, surpreendeu com bons resultados de Fernando Alonso e um carro competitivo."
   },
   "ferrari": {
-    "logoEquipe":
-        "https://www.feaseo.com/uploads/article/18729/LKcmzrASsLTXOI4C.png",
+    "logoEquipe": "assets/images/ferrari.png",
     "imagemCarro":
         "https://media.formula1.com/content/dam/fom-website/teams/2023/ferrari.png.transform/4col/image.png",
     "textoSobre":
         "A equipe mais tradicional da F1, presente desde 1950. Detém o recorde de mais vitórias, pódios e títulos de construtores (16). Foi casa de lendas como Michael Schumacher, que trouxe 5 títulos consecutivos (2000–2004). Apesar de anos difíceis, segue sendo símbolo da F1."
   },
   "haas": {
-    "logoEquipe":
-        "https://fabrikbrands.com/wp-content/uploads/F1-Team-logos-9.png",
+    "logoEquipe": "assets/images/haas.png",
     "imagemCarro":
         "https://e00-especiales-marca.uecdn.es/motor/images/formula1/escuderias/2023/gral/coche-haas-mediasombra.png",
     "textoSobre":
         "Estreou em 2016 como a primeira equipe americana em décadas. É conhecida por sua abordagem prática e parceria técnica com a Ferrari. Ainda não venceu corridas, mas segue competitiva no meio do grid."
   },
   "mclaren": {
-    "logoEquipe": "https://images.app.goo.gl/nfb9H4pU46KNGdhu9",
+    "logoEquipe": "assets/images/mclaren.png",
     "imagemCarro":
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cnss.gov.lb%2Fformula-1-gamebx240825%2FTeam-McLaren-Racing-Official-Website-7730426%2F&psig=AOvVaw3ZpI5JVz8zRnXrI_0fiJK9&ust=1745622192560000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDc6cjj8YwDFQAAAAAdAAAAABAJ",
     "textoSobre":
         "Entrou na F1 em 1966 com Bruce McLaren. Venceu 8 campeonatos de construtores e revelou pilotos lendários como Ayrton Senna, Alain Prost e Lewis Hamilton. Passou por altos e baixos, mas voltou à boa forma nos últimos anos com foco em jovens talentos como Lando Norris e Oscar Piastri."
   },
   "mercedes": {
-    "logoEquipe":
-        "https://logodownload.org/wp-content/uploads/2014/04/mercedes-benz-logo-0.png",
+    "logoEquipe": "assets/images/mercedes.png",
     "imagemCarro":
         "https://s3.us-east-1.amazonaws.com/motorsport.com-cdn/static/custom/car-thumbs/F1_2024/F1_MERCEDES%20AMG%20W15.png",
     "textoSobre":
         "A Mercedes retornou oficialmente à F1 em 2010 como equipe própria, mas sua história remonta aos anos 1950 com lendas como Juan Manuel Fangio. Dominou a era híbrida (2014–2020), conquistando 8 títulos de construtores e 7 de pilotos com Lewis Hamilton e Nico Rosberg. Conhecida por sua engenharia de ponta e consistência."
   },
   "rb": {
-    "logoEquipe":
-        "https://upload.wikimedia.org/wikipedia/pt/a/a1/Logotipo_da_RB_F1_Team.png",
+    "logoEquipe": 'assets/images/visacash.png',
     "imagemCarro":
         "https://www.visacashapprb.com/_next/static/media/vcarb02.511ff1b2.png",
     "textoSobre":
         "Equipe júnior da Red Bull, surgiu como Toro Rosso em 2006. Revelou campeões como Sebastian Vettel e Max Verstappen. Em 2020 virou AlphaTauri, vencendo uma corrida com Pierre Gasly. Em 2024, adotou novo nome e visual mais agressivo."
   },
   "red_bull": {
-    "logoEquipe":
-        "https://tse4.mm.bing.net/th/id/OIP.Z4rbqgy2l6SsJD7BB9kbtQAAAA?rs=1&pid=ImgDetMain",
+    "logoEquipe": "assets/images/redbull.png",
     "imagemCarro":
         "https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/red-bull-racing.png",
     "textoSobre":
         "Estreou em 2005, sucedendo a Jaguar. Ficou famosa pelo domínio de Sebastian Vettel entre 2010 e 2013, quando conquistou 4 títulos consecutivos. Voltou ao topo com Max Verstappen, vencendo os campeonatos de 2022 e 2023 com grande superioridade. Inovadora em estratégia e aerodinâmica."
   },
   "sauber": {
-    "logoEquipe":
-        "https://cdn.formula1news.co.uk/wp-content/uploads/2024/01/Logo-Black.png",
+    "logoEquipe": "assets/images/kick.png",
     "imagemCarro":
         "https://s3.us-east-1.amazonaws.com/motorsport.com-cdn/static/custom/car-thumbs/F1_2024/F1_KICK%20SAUBER%20C44.png",
     "textoSobre":
         "Tem uma rica história, sendo campeã com Giuseppe Farina no primeiro campeonato (1950). A atual equipe é a Sauber, que compete com a marca Alfa Romeo desde 2019. Em 2026 será a nova Audi F1 Team, marcando nova fase."
   },
   "williams": {
-    "logoEquipe":
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFd9MXixy2t_NnR6kzw3zTr66SUtMOK3QRg&s",
+    "logoEquipe": "assets/images/willians.png",
     "imagemCarro":
         "https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2023/williams.png",
     "textoSobre":
