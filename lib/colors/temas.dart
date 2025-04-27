@@ -2,24 +2,35 @@ import 'package:flutter/material.dart';
 
 ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: Colors.grey.shade500,
+    scaffoldBackgroundColor: Colors.grey.shade400,
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.grey.shade500,
+      backgroundColor: Colors.grey.shade400,
       foregroundColor: Colors.black,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: Colors.grey.shade400,
+      backgroundColor: Colors.grey.shade500,
       selectedItemColor: Colors.grey.shade100,
-      unselectedItemColor: Colors.grey.shade200,
+      unselectedItemColor: Colors.grey.shade300,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.grey.shade300,
-            foregroundColor: Colors.grey.shade200,
-            textStyle:
-                const TextStyle(fontWeight: FontWeight.bold, fontSize: 15))),
+            backgroundColor: Colors.grey.shade500,
+            foregroundColor: Colors.grey.shade800,
+            textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Colors.black))),
+    textTheme: const TextTheme(
+        bodyLarge: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf"),
+        bodyMedium: TextStyle(
+            color: Colors.black,
+            fontSize: 15,
+            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf")),
     colorScheme: ColorScheme.light(
-      surface: Colors.grey.shade200,
+      surface: Colors.grey.shade400,
       primary: Colors.grey.shade400,
       secondary: Colors.grey.shade300,
       tertiary: Colors.grey.shade200,
@@ -40,10 +51,21 @@ ThemeData darkMode = ThemeData(
         style: ElevatedButton.styleFrom(
             backgroundColor: Colors.grey.shade800,
             foregroundColor: Colors.grey.shade600,
-            textStyle:
-                const TextStyle(fontWeight: FontWeight.bold, fontSize: 15))),
+            textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Colors.white))),
+    textTheme: const TextTheme(
+        bodyLarge: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf"),
+        bodyMedium: TextStyle(
+            color: Colors.white,
+            fontSize: 15,
+            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf")),
     colorScheme: ColorScheme.dark(
-      surface: Colors.grey.shade600,
+      surface: Colors.grey.shade900,
       primary: Colors.grey.shade800,
       secondary: Colors.grey.shade700,
       tertiary: Colors.grey.shade600,

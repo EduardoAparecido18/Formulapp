@@ -1,9 +1,15 @@
+// ignore: unused_import
 import 'package:f1app/colors/temas.dart';
+import 'package:f1app/colors/themeProvider.dart';
 import 'package:f1app/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,9 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: lightMode,
-      darkTheme: darkMode,
-      home: HomePage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      //darkTheme: darkMode,
+      home: const HomePage(),
     );
   }
 }

@@ -9,7 +9,7 @@ final Map<String, Map<String, String>> extrasEquipes = {
   "aston_martin": {
     "logoEquipe": "assets/images/aston.png",
     "imagemCarro":
-        "https://e00-especiales-marca.uecdn.es/motor/images/formula1/escuderias/2023/gral/coche-astonmartin.png",
+        "https://www.formula1.com/content/dam/fom-website/teams/2022/aston-martin.png.transform/4col/image.png",
     "textoSobre":
         "Reestreou em 2021, mas tem raízes na F1 desde 1959. Com investimento pesado e a contratação de Sebastian Vettel, se estabeleceu como candidata a crescer. Em 2023, surpreendeu com bons resultados de Fernando Alonso e um carro competitivo."
   },
@@ -23,28 +23,28 @@ final Map<String, Map<String, String>> extrasEquipes = {
   "haas": {
     "logoEquipe": "assets/images/haas.png",
     "imagemCarro":
-        "https://e00-especiales-marca.uecdn.es/motor/images/formula1/escuderias/2023/gral/coche-haas-mediasombra.png",
+        "https://media.formula1.com/content/dam/fom-website/teams/2024/teamcar-haas.png.transform/4col/image.png",
     "textoSobre":
         "Estreou em 2016 como a primeira equipe americana em décadas. É conhecida por sua abordagem prática e parceria técnica com a Ferrari. Ainda não venceu corridas, mas segue competitiva no meio do grid."
   },
   "mclaren": {
     "logoEquipe": "assets/images/mclaren.png",
     "imagemCarro":
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cnss.gov.lb%2Fformula-1-gamebx240825%2FTeam-McLaren-Racing-Official-Website-7730426%2F&psig=AOvVaw3ZpI5JVz8zRnXrI_0fiJK9&ust=1745622192560000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDc6cjj8YwDFQAAAAAdAAAAABAJ",
+        "https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/mclaren.png",
     "textoSobre":
         "Entrou na F1 em 1966 com Bruce McLaren. Venceu 8 campeonatos de construtores e revelou pilotos lendários como Ayrton Senna, Alain Prost e Lewis Hamilton. Passou por altos e baixos, mas voltou à boa forma nos últimos anos com foco em jovens talentos como Lando Norris e Oscar Piastri."
   },
   "mercedes": {
     "logoEquipe": "assets/images/mercedes.png",
     "imagemCarro":
-        "https://s3.us-east-1.amazonaws.com/motorsport.com-cdn/static/custom/car-thumbs/F1_2024/F1_MERCEDES%20AMG%20W15.png",
+        "https://www.formula1.com/content/dam/fom-website/teams/2023/teamcar-mercedes.png.transform/4col/image.png",
     "textoSobre":
         "A Mercedes retornou oficialmente à F1 em 2010 como equipe própria, mas sua história remonta aos anos 1950 com lendas como Juan Manuel Fangio. Dominou a era híbrida (2014–2020), conquistando 8 títulos de construtores e 7 de pilotos com Lewis Hamilton e Nico Rosberg. Conhecida por sua engenharia de ponta e consistência."
   },
   "rb": {
     "logoEquipe": 'assets/images/visacash.png',
     "imagemCarro":
-        "https://www.visacashapprb.com/_next/static/media/vcarb02.511ff1b2.png",
+        "https://framerusercontent.com/images/T7THJzfgXim91iNQiRbaxUJf4l0.png?scale-down-to=2048",
     "textoSobre":
         "Equipe júnior da Red Bull, surgiu como Toro Rosso em 2006. Revelou campeões como Sebastian Vettel e Max Verstappen. Em 2020 virou AlphaTauri, vencendo uma corrida com Pierre Gasly. Em 2024, adotou novo nome e visual mais agressivo."
   },

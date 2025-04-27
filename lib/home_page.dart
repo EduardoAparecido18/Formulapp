@@ -1,6 +1,8 @@
+import 'package:f1app/colors/themeProvider.dart';
 import 'package:f1app/construtores/tela_equipes.dart';
 import 'package:f1app/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'circuitos/tela_circuitos.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,19 +17,24 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _paginasNave = [
     //telas do bottomsheet
-    const TelaCircuitos(),
+    const equipesTela(),
 
     const telaPilotos(),
 
-    const equipesTela(),
+    const TelaCircuitos(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Theme.of(context).colorScheme.onSurface,
       appBar: AppBar(
-        // backgroundColor: Theme.of(context).colorScheme.onSurface,
+        actions: [
+          ElevatedButton.icon(
+              onPressed: () {
+                Provider.of<ThemeProvider>(context, listen: false).trocarTema();
+              },
+              label: const Text('aaa'))
+        ],
         leading: Padding(
           padding: const EdgeInsets.all(1.0),
           child: Image.network(
@@ -41,9 +48,6 @@ class _HomePageState extends State<HomePage> {
         borderRadius: const BorderRadius.vertical(
             top: Radius.circular(30), bottom: Radius.circular(30)),
         child: BottomNavigationBar(
-            //backgroundColor: Theme.of(context).colorScheme.onPrimary,
-            //selectedItemColor: Theme.of(context).colorScheme.onSecondary,
-            //unselectedItemColor: Theme.of(context).colorScheme.onTertiary,
             elevation: 10,
             currentIndex: _currentIndex,
             onTap: (index) {
@@ -53,11 +57,11 @@ class _HomePageState extends State<HomePage> {
             },
             items: const [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.track_changes), label: 'Circuitos'),
+                  icon: Icon(Icons.warehouse), label: 'Construtores'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: 'Pilotos'),
+                  icon: Icon(Icons.sports_motorsports), label: 'Pilotos'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.flag_circle), label: 'Equipes')
+                  icon: Icon(Icons.sports_score), label: 'Circuitos')
             ]),
       ),
     );

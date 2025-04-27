@@ -12,7 +12,7 @@ class TelaCircuitos extends StatelessWidget {
       child: GridView.builder(
           padding: const EdgeInsets.all(10),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: 3,
             crossAxisSpacing: 40,
             mainAxisSpacing: 40,
           ),
@@ -22,7 +22,6 @@ class TelaCircuitos extends StatelessWidget {
             return ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     // backgroundColor: Theme.of(context).colorScheme.onSurface,
-                    textStyle: const TextStyle(fontSize: 15),
                     elevation: 9,
                     shape: const RoundedRectangleBorder(
                         borderRadius:
@@ -46,10 +45,6 @@ class TelaCircuitos extends StatelessWidget {
                 },
                 child: Text(
                   pista['localizacao']!,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
                 ));
           }),
     );

@@ -67,9 +67,9 @@ class _telaPilotosState extends State<telaPilotos> {
         body: _pilotos.isEmpty
             ? const Center(child: CircularProgressIndicator()) // Carregando
             : Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   // ignore: use_full_hex_values_for_flutter_colors
-                  color: Color(0xfffcdc8cd),
+                  color: Theme.of(context).colorScheme.surface,
                 ),
                 child: ListView.builder(
                   itemCount: _pilotos.length,
@@ -79,11 +79,12 @@ class _telaPilotosState extends State<telaPilotos> {
                     final iconePiloto = dadosExtras?['imagemDriver'] ?? "";
                     return ListTile(
                       contentPadding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 14),
+                          vertical: 20, horizontal: 10),
                       leading: CircleAvatar(
                         radius: 30,
                         child: Image.network(
                           iconePiloto,
+                          fit: BoxFit.contain,
                         ),
                       ),
                       title: Text("${piloto.givenName} ${piloto.familyName}"),

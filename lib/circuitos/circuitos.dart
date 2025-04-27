@@ -21,7 +21,7 @@ final List<Map<String, dynamic>> circuitos = [
     'name': 'Albert Park Circuit',
     'localizacao': 'Australia',
     'Sobre':
-        'Inaugurado no calendário da F1 em 1996, o Circuito de Albert Park, localizado em Melbourne, é conhecido por suas características de circuito de rua misturadas com trechos permanentes. Michael Schumacher e Lewis Hamilton compartilham o recorde de mais vitórias neste circuito, com quatro triunfos cada. Hamilton também detém o recorde de maior número de pole positions em Albert Park. A volta mais rápida registrada durante uma corrida foi de 1:20.260, estabelecida por Charles Leclerc em 2022.'
+        'Inaugurado no calendário da F1 em 1996, o Circuito de Albert Park, localizado em Melbourne, é conhecido por suas características de circuito de rua misturadas com trechos permanentes. Schumacher e Hamilton compartilham o recorde de mais vitórias , com quatro triunfos cada. Hamilton também detém o recorde de maior número de pole positions. A volta mais rápida  1:20.260,  por Charles Leclerc em 2022.'
   },
   {
     'imagem':

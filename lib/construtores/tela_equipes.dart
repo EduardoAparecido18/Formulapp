@@ -74,9 +74,7 @@ class _equipesTelaState extends State<equipesTela> {
                     child: Text(_mensagemErro ?? "nenhuma equipe encontrada"),
                   )
                 : Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFfcdc8c),
-                    ),
+                    decoration: const BoxDecoration(),
                     child: ListView.builder(
                       itemCount: _equipes.length,
                       itemBuilder: (context, index) {
@@ -91,8 +89,8 @@ class _equipesTelaState extends State<equipesTela> {
                         return ListTile(
                           // ignore: prefer_const_constructors
                           contentPadding: EdgeInsets.symmetric(
-                            vertical: 15,
-                            horizontal: 14,
+                            vertical: 20,
+                            horizontal: 10,
                           ),
                           leading: CircleAvatar(
                             backgroundColor: equipesBackground,

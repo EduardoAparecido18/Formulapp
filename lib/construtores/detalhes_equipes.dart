@@ -21,15 +21,15 @@ class detalhesEquipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.all(15),
       child: Column(
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.network(
                 logo,
-                height: 200,
-                width: 200,
+                height: 130,
+                width: 130,
                 fit: BoxFit.cover,
               )),
           const SizedBox(
@@ -52,6 +52,11 @@ class detalhesEquipes extends StatelessWidget {
           const SizedBox(height: 5),
           ClipRRect(
             child: Image.network(carroPng),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            descricaoEquipes,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           )
         ],
       ),
