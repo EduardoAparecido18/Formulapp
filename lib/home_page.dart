@@ -1,3 +1,4 @@
+import 'package:f1app/colors/temas.dart';
 import 'package:f1app/colors/themeProvider.dart';
 import 'package:f1app/construtores/tela_equipes.dart';
 import 'package:f1app/pilotos/tela_pilotos.dart';
@@ -26,14 +27,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
-          ElevatedButton.icon(
-              onPressed: () {
-                Provider.of<ThemeProvider>(context, listen: false).trocarTema();
-              },
-              label: const Text('aaa'))
+          FloatingActionButton(
+            onPressed: () {
+              themeProvider.trocarTema();
+            },
+            child: Icon(themeProvider.themeData.brightness == Brightness.dark
+                ? Icons.nights_stay
+                : Icons.wb_sunny),
+          )
         ],
         leading: Padding(
           padding: const EdgeInsets.all(1.0),

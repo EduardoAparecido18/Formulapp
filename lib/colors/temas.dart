@@ -14,21 +14,17 @@ ThemeData lightMode = ThemeData(
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.grey.shade500,
-            foregroundColor: Colors.grey.shade800,
+            backgroundColor: Colors.black,
+            foregroundColor: Colors.white,
             textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15,
                 color: Colors.black))),
     textTheme: const TextTheme(
         bodyLarge: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
-            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf"),
+            color: Colors.black, fontSize: 18, fontFamily: "Formula1"),
         bodyMedium: TextStyle(
-            color: Colors.black,
-            fontSize: 15,
-            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf")),
+            color: Colors.black, fontSize: 15, fontFamily: "Formula1")),
     colorScheme: ColorScheme.light(
       surface: Colors.grey.shade400,
       primary: Colors.grey.shade400,
@@ -49,21 +45,17 @@ ThemeData darkMode = ThemeData(
         unselectedItemColor: Colors.grey.shade500),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.grey.shade800,
-            foregroundColor: Colors.grey.shade600,
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
             textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15,
                 color: Colors.white))),
     textTheme: const TextTheme(
         bodyLarge: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf"),
+            color: Colors.white, fontSize: 18, fontFamily: "Formula1"),
         bodyMedium: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontFamily: "assets/fonts/Formula1-Regular_web_0.ttf")),
+            color: Colors.white, fontSize: 15, fontFamily: "Formula1")),
     colorScheme: ColorScheme.dark(
       surface: Colors.grey.shade900,
       primary: Colors.grey.shade800,

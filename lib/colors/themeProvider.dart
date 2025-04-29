@@ -1,6 +1,7 @@
 import 'package:f1app/colors/temas.dart';
 import 'package:flutter/material.dart';
 
+//usado para fazer a troca do tema do app manualmente
 class ThemeProvider extends ChangeNotifier {
   ThemeData _themeData = lightMode;
   ThemeData get themeData => _themeData;
