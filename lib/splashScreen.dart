@@ -1,7 +1,7 @@
-import 'package:f1app/home_page.dart';
+import 'package:Formulapp/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:f1app/colors/themeProvider.dart';
+import 'package:Formulapp/colors/themeProvider.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -73,7 +73,7 @@ class SplashScreen extends StatelessWidget {
                     FloatingActionButton(
                       onPressed: () async {
                         final Uri url = Uri.parse(
-                            'https://www.linkedin.com/in/eduardo-aparecido-455a372ba/');
+                            'https://www.linkedin.com/in/eduardo-aparecido-455a372ba/ ');
 
                         if (await canLaunchUrl(url)) {
                           await launchUrl(url);

@@ -23,37 +23,21 @@ class detalhesDaPista extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            name,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
+          Text(name,
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          const SizedBox(height: 10),
           Text(
             'Localização: $localizacao',
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
-          const SizedBox(
-            height: 15,
-          ),
-          Image.network(
-            imagem,
-            height: 200,
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Text(
-            'Sobre o Circuito: $Sobre',
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 15),
+          Image.network(imagem, height: 200),
+          const SizedBox(height: 50),
+          Text('Sobre o Circuito: $Sobre',
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+          const SizedBox(height: 10),
         ],
       ),
     );

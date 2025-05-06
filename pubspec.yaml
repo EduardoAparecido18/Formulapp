@@ -1,5 +1,5 @@
-name: f1app
-description: "A new Flutter project."
+name: Formulapp
+description: "Tudo sobre a elite do automobilismo mundial"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -38,10 +38,15 @@ dependencies:
   provider: 
 
 dev_dependencies:
+  flutter_launcher_icons: "0.14.0"
   flutter_test:
     sdk: flutter
   http: ^0.13.6
   url_launcher: ^6.3.1
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/formulapp_icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

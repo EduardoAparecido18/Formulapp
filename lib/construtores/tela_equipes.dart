@@ -1,6 +1,6 @@
-import 'package:f1app/colors/equipesCores.dart';
-import 'package:f1app/construtores/dadosExtrasEquipes.dart';
-import 'package:f1app/construtores/detalhes_equipes.dart';
+import 'package:Formulapp/colors/equipesCores.dart';
+import 'package:Formulapp/construtores/dadosExtrasEquipes.dart';
+import 'package:Formulapp/construtores/detalhes_equipes.dart';
 import 'package:flutter/material.dart';
 import 'apiEquipes.dart';
 import 'construtores.dart';

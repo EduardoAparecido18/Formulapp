@@ -1,5 +1,5 @@
-import 'package:f1app/pilotos/detalhes_pilotos.dart';
-import 'package:f1app/pilotos/imagem_pilotos.dart';
+import 'package:Formulapp/pilotos/detalhes_pilotos.dart';
+import 'package:Formulapp/pilotos/imagem_pilotos.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'api_requisi.dart';

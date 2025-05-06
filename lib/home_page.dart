@@ -1,7 +1,6 @@
-import 'package:f1app/colors/temas.dart';
-import 'package:f1app/colors/themeProvider.dart';
-import 'package:f1app/construtores/tela_equipes.dart';
-import 'package:f1app/pilotos/tela_pilotos.dart';
+import 'package:Formulapp/colors/themeProvider.dart';
+import 'package:Formulapp/construtores/tela_equipes.dart';
+import 'package:Formulapp/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'circuitos/tela_circuitos.dart';

@@ -1,8 +1,7 @@
 // ignore: unused_import
-import 'package:f1app/colors/temas.dart';
-import 'package:f1app/colors/themeProvider.dart';
-import 'package:f1app/home_page.dart';
-import 'package:f1app/splashScreen.dart';
+import 'package:Formulapp/colors/temas.dart';
+import 'package:Formulapp/colors/themeProvider.dart';
+import 'package:Formulapp/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,8 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(context).themeData,
-      home: const SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }

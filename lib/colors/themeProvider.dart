@@ -1,4 +1,4 @@
-import 'package:f1app/colors/temas.dart';
+import 'package:Formulapp/colors/temas.dart';
 import 'package:flutter/material.dart';
 
 //usado para fazer a troca do tema do app manualmente
