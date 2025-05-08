@@ -101,7 +101,7 @@ class SplashScreen extends StatelessWidget {
                 ),
                 const Row(
                   children: [
-                    SizedBox(width: 110),
+                    SizedBox(width: 65),
                     Text('Github'),
                     SizedBox(width: 27),
                     Text('Instagram'),

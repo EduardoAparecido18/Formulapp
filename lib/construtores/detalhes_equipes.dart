@@ -23,7 +23,7 @@ class detalhesEquipes extends StatelessWidget {
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: Image.network(
+              child: Image.asset(
                 logo,
                 height: 130,
                 width: 130,

@@ -1,4 +1,4 @@
-package com.example.f1app
+package com.example.Formulapp
 
 import io.flutter.embedding.android.FlutterActivity
 
