@@ -31,9 +31,9 @@ class detalhesDaPista extends StatelessWidget {
             'Localização: $localizacao',
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 60),
           Image.network(imagem, height: 200),
-          const SizedBox(height: 50),
+          const SizedBox(height: 70),
           Text('Sobre o Circuito: $Sobre',
               style:
                   const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),

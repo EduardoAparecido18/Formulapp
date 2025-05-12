@@ -1,5 +1,6 @@
 import 'package:Formulapp/colors/themeProvider.dart';
 import 'package:Formulapp/construtores/tela_equipes.dart';
+import 'package:Formulapp/drawer.dart';
 import 'package:Formulapp/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,25 +29,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          FloatingActionButton(
-            onPressed: () {
-              themeProvider.trocarTema();
-            },
-            child: Icon(themeProvider.themeData.brightness == Brightness.dark
-                ? Icons.nights_stay
-                : Icons.wb_sunny),
-          )
-        ],
-        leading: Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Image.network(
-            'https://companieslogo.com/img/orig/FWONK-85baed59.png?t=1720244491',
-            height: 10.0,
-          ),
-        ),
-      ),
+      drawer: DrawerWidget(),
+      appBar: AppBar(),
       body: _paginasNave[_currentIndex],
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.vertical(

@@ -46,11 +46,11 @@ class detalhesEquipes extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 30),
           ClipRRect(
             child: Image.network(carroPng),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 50),
           Text(
             descricaoEquipes,
             style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),

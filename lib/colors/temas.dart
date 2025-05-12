@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: Colors.grey.shade400,
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.grey.shade400,
-      foregroundColor: Colors.black,
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.grey,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: Colors.grey.shade500,
-      selectedItemColor: Colors.grey.shade100,
+      backgroundColor: Colors.grey.shade400,
+      selectedItemColor: Colors.grey.shade200,
       unselectedItemColor: Colors.grey.shade300,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.grey.shade500,
             foregroundColor: Colors.white,
             textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
@@ -26,10 +26,10 @@ ThemeData lightMode = ThemeData(
         bodyMedium: TextStyle(
             color: Colors.black, fontSize: 15, fontFamily: "Formula1")),
     colorScheme: ColorScheme.light(
-      surface: Colors.grey.shade400,
-      primary: Colors.grey.shade400,
+      surface: Colors.white,
+      primary: Colors.grey.shade200,
       secondary: Colors.grey.shade300,
-      tertiary: Colors.grey.shade200,
+      tertiary: Colors.grey.shade400,
     ));
 
 ThemeData darkMode = ThemeData(
@@ -45,8 +45,8 @@ ThemeData darkMode = ThemeData(
         unselectedItemColor: Colors.grey.shade500),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
+            backgroundColor: Colors.grey.shade800,
+            foregroundColor: Colors.white,
             textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15,

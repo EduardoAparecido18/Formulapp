@@ -12,7 +12,7 @@ class TelaCircuitos extends StatelessWidget {
       child: GridView.builder(
           padding: const EdgeInsets.all(10),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+            crossAxisCount: 2,
             crossAxisSpacing: 40,
             mainAxisSpacing: 40,
           ),

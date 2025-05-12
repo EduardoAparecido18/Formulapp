@@ -36,7 +36,7 @@ class SplashScreen extends StatelessWidget {
                 const Text('DO AUTOMOBILISMO MUNDIAL',
                     style: TextStyle(
                         color: Colors.red, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 60),
+                const SizedBox(height: 290),
                 SizedBox(
                   height: 50,
                   width: double.infinity,
@@ -50,7 +50,7 @@ class SplashScreen extends StatelessWidget {
                       child: const Text("IR PARA O APP")),
                 ),
                 const Divider(color: Colors.red, height: 20),
-                const Text('SIGA-NOS EM NOSSAS REDES',
+                const Text('NOSSAS REDES SOCIAIS',
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
                 const SizedBox(height: 10),
