@@ -18,27 +18,29 @@ class detalhesDaPista extends StatelessWidget {
   final String imagem;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(name,
-              style:
-                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-          const SizedBox(height: 10),
-          Text(
-            'Localização: $localizacao',
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          ),
-          const SizedBox(height: 60),
-          Image.network(imagem, height: 200),
-          const SizedBox(height: 70),
-          Text('Sobre o Circuito: $Sobre',
-              style:
-                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-          const SizedBox(height: 10),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(name,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(height: 10),
+            Text(
+              'Localização: $localizacao',
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
+            const SizedBox(height: 60),
+            Image.network(imagem, height: 200),
+            const SizedBox(height: 70),
+            Text('Sobre o Circuito: $Sobre',
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }
