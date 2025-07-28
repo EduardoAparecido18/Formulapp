@@ -1,4 +1,5 @@
 import 'package:Formulapp/home_page.dart';
+import 'package:Formulapp/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:Formulapp/colors/themeProvider.dart';
@@ -9,119 +10,125 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          actions: [
-            FloatingActionButton(
-              onPressed: () {
-                themeProvider.trocarTema();
-              },
-              child: Icon(themeProvider.themeData.brightness == Brightness.dark
-                  ? Icons.nights_stay
-                  : Icons.wb_sunny),
-            )
-          ],
-        ),
-        body: SingleChildScrollView(
+    var size = MediaQuery.of(context).size;
+    var appBar = AppBar(backgroundColor: Colors.black);
+    var screenHeight = (size.height - appBar.preferredSize.height) -
+        MediaQuery.of(context).padding.top;
+    return Scaffold(
+      appBar: appBar,
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
           child: Container(
-            child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Center(
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Image.asset('assets/images/formula1_spl.png',
-                            width: 400),
-                        const SizedBox(height: 20),
-                        Image.asset('assets/images/logo_app.png', width: 200),
-                        const SizedBox(height: 30),
-                        const Text('SAIBA TUDO SOBRE O TOPO'),
-                        const Text('DO AUTOMOBILISMO MUNDIAL',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold)),
-                        const SizedBox(height: 70),
-                        SizedBox(
-                          height: 50,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const HomePage()));
-                              },
-                              child: const Text("IR PARA O APP")),
+            height: size.height,
+            width: size.width,
+            child: Column(
+              children: [
+                Expanded(
+                    child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 5),
+                      Text(
+                        'WELCOME!',
+                        style: TextStyle(fontSize: 30, color: Colors.white),
+                      ),
+                      SizedBox(height: 15),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
+                        child: Container(
+                          height: screenHeight / 3,
+                          width: 400,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'PILOTOS',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.bold),
+                              ),
+                              Expanded(
+                                child: OverflowBox(
+                                  child: Image.asset(
+                                    'assets/images/norrisCapa.png',
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        const Divider(color: Colors.red, height: 20),
-                        const Text('NOSSAS REDES SOCIAIS',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 12)),
-                        const SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                      ),
+                      SizedBox(height: 15),
+                      Container(
+                        height: screenHeight / 3,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            FloatingActionButton(
-                                onPressed: () async {
-                                  final Uri url = Uri.parse(
-                                      'https://github.com/EduardoAparecido18');
-
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  } else {
-                                    throw 'NAO FOI POSSIVEL ABRI';
-                                  }
-                                },
+                            Text(
+                              'EQUIPES',
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                            Expanded(
+                              child: OverflowBox(
                                 child: Image.asset(
-                                    'assets/images/github_logo.jpg')),
-                            const SizedBox(width: 40),
-                            FloatingActionButton(
-                              onPressed: () async {
-                                final Uri url = Uri.parse(
-                                    'https://www.linkedin.com/in/eduardo-aparecido-455a372ba/ ');
-
-                                if (await canLaunchUrl(url)) {
-                                  await launchUrl(url);
-                                } else {
-                                  throw 'NAO FOI POSSIVEL ABRI';
-                                }
-                              },
-                              child: Image.asset(
-                                  'assets/images/instagram_logo.png'),
-                            ),
-                            const SizedBox(width: 40),
-                            FloatingActionButton(
-                              onPressed: () async {
-                                final Uri url = Uri.parse(
-                                    'www.linkedin.com/in/eduardo-aparecido-455a372ba');
-
-                                if (await canLaunchUrl(url)) {
-                                  await launchUrl(url);
-                                } else {
-                                  throw 'NAO FOI POSSIVEL ABRI';
-                                }
-                              },
-                              child: Image.asset('assets/images/linkedin.png'),
+                                  'assets/images/mclarenFrente.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
                             ),
                           ],
                         ),
-                        const Row(
+                      ),
+                      SizedBox(height: 15),
+                      Container(
+                        height: screenHeight / 3,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(width: 120),
-                            Text('Github'),
-                            SizedBox(width: 28),
-                            Text('Instagram'),
-                            SizedBox(width: 15),
-                            Text('Linkedin'),
+                            Text(
+                              'CIRCUITOS',
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                            Expanded(
+                              child: OverflowBox(
+                                child: Image.asset(
+                                  'assets/images/interlagos.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 )),
+              ],
+            ),
           ),
         ),
       ),

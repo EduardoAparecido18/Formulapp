@@ -27,7 +27,7 @@ ThemeData lightMode = ThemeData(
             color: Colors.black, fontSize: 15, fontFamily: "Formula1")),
     colorScheme: ColorScheme.light(
       surface: Colors.white,
-      primary: Colors.grey.shade200,
+      primary: Colors.grey.shade400,
       secondary: Colors.grey.shade300,
       tertiary: Colors.grey.shade400,
     ));

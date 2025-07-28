@@ -1,9 +1,7 @@
-import 'package:Formulapp/colors/themeProvider.dart';
 import 'package:Formulapp/construtores/tela_equipes.dart';
 import 'package:Formulapp/drawer.dart';
 import 'package:Formulapp/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'circuitos/tela_circuitos.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,7 +25,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       drawer: DrawerWidget(),
       appBar: AppBar(),
@@ -36,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         borderRadius: const BorderRadius.vertical(
             top: Radius.circular(30), bottom: Radius.circular(30)),
         child: BottomNavigationBar(
-            elevation: 10,
+            elevation: 0,
             currentIndex: _currentIndex,
             onTap: (index) {
               setState(() {
