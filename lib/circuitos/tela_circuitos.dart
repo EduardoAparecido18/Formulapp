@@ -10,7 +10,7 @@ class TelaCircuitos extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Container(
-        height: MediaQuery.of(context).size.height * 1,
+        height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: GridView.builder(
             padding: const EdgeInsets.all(10),

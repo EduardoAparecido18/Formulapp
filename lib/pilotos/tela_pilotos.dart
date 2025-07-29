@@ -22,6 +22,18 @@ class _telaPilotosState extends State<telaPilotos> {
   // ignore: unused_field
   String? _mensagemErro;
 
+  List<Pilotos> removerDuplicados(List<Pilotos> lista) {
+    final nomes = <String>{};
+    final listaSemDuplicados = <Pilotos>[];
+    for (var piloto in lista) {
+      if (!nomes.contains(piloto.full_name)) {
+        nomes.add(piloto.full_name);
+        listaSemDuplicados.add(piloto);
+      }
+    }
+    return listaSemDuplicados;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -31,20 +43,39 @@ class _telaPilotosState extends State<telaPilotos> {
   Future<void> fetchPilotos() async {
     try {
       List<Pilotos> pilotos = await apiService.getPilotos();
+      pilotos = removerDuplicados(pilotos);
       setState(() {
         _pilotos = pilotos;
         _loading = false;
+        _mensagemErro = null;
       });
     } catch (e) {
-      _mensagemErro = "Erro ao carregar os pilotos";
-      _loading = false;
+      setState(() {
+        _mensagemErro = "Erro ao carregar os pilotos: $e";
+        _loading = false;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    if (_loading) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    if (_mensagemErro != null) {
+      return Scaffold(
+        body: Center(
+          child: Text(_mensagemErro!),
+        ),
+      );
+    }
     void mostrarDetalhes(BuildContext context, Pilotos piloto) {
-      final dadosExtras = driverImage[piloto.driverId];
+      final dadosExtras = driverImage[piloto.full_name];
       showModalBottomSheet(
           isScrollControlled: true,
           context: context,
@@ -52,9 +83,9 @@ class _telaPilotosState extends State<telaPilotos> {
             return FractionallySizedBox(
                 heightFactor: 0.8,
                 child: DetalhesPilotos(
-                  givenName: piloto.givenName,
-                  familyName: piloto.familyName,
-                  nationality: piloto.nationality,
+                  givenName: piloto.first_name,
+                  familyName: piloto.full_name,
+                  nationality: piloto.country_code,
                   //url: piloto.url,
                   imagemPiloto: dadosExtras?['imagemDriver'] ?? "",
                   descricaoPiloto:
@@ -75,7 +106,7 @@ class _telaPilotosState extends State<telaPilotos> {
                   itemCount: _pilotos.length,
                   itemBuilder: (context, index) {
                     final piloto = _pilotos[index];
-                    final dadosExtras = driverImage[piloto.driverId];
+                    final dadosExtras = driverImage[piloto.full_name];
                     final iconePiloto = dadosExtras?['imagemDriver'] ?? "";
                     return ListTile(
                       contentPadding: const EdgeInsets.symmetric(
@@ -87,8 +118,8 @@ class _telaPilotosState extends State<telaPilotos> {
                           fit: BoxFit.contain,
                         ),
                       ),
-                      title: Text("${piloto.givenName} ${piloto.familyName}"),
-                      subtitle: Text("Nacionalidade: ${piloto.nationality}"),
+                      title: Text("${piloto.full_name}"),
+                      subtitle: Text("Nacionalidade: ${piloto.country_code}"),
                       onTap: () {
                         mostrarDetalhes(context, piloto);
                       },
