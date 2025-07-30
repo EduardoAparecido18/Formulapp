@@ -1,9 +1,7 @@
-import 'package:Formulapp/home_page.dart';
+import 'package:Formulapp/circuitos/tela_circuitos.dart';
+import 'package:Formulapp/construtores/tela_equipes.dart';
 import 'package:Formulapp/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:Formulapp/colors/themeProvider.dart';
-import 'package:provider/provider.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -35,17 +33,16 @@ class SplashScreen extends StatelessWidget {
                         'WELCOME!',
                         style: TextStyle(fontSize: 30, color: Colors.white),
                       ),
-                      SizedBox(height: 15),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                                  builder: (context) => telaPilotos()));
                         },
                         child: Container(
-                          height: screenHeight / 3,
-                          width: 400,
+                          height: screenHeight / 3.2,
+                          width: size.width,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius:
@@ -71,57 +68,73 @@ class SplashScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 15),
-                      Container(
-                        height: screenHeight / 3,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'EQUIPES',
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.bold),
-                            ),
-                            Expanded(
-                              child: OverflowBox(
-                                child: Image.asset(
-                                  'assets/images/mclarenFrente.png',
-                                  fit: BoxFit.contain,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => equipesTela()));
+                        },
+                        child: Container(
+                          height: screenHeight / 3.2,
+                          width: size.width,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'EQUIPES',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.bold),
+                              ),
+                              Expanded(
+                                child: OverflowBox(
+                                  child: Image.asset(
+                                    'assets/images/mclarenFrente.png',
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 15),
-                      Container(
-                        height: screenHeight / 3,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'CIRCUITOS',
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.bold),
-                            ),
-                            Expanded(
-                              child: OverflowBox(
-                                child: Image.asset(
-                                  'assets/images/interlagos.png',
-                                  fit: BoxFit.contain,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TelaCircuitos()));
+                        },
+                        child: Container(
+                          height: screenHeight / 3.2,
+                          width: size.width,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'CIRCUITOS',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.bold),
+                              ),
+                              Expanded(
+                                child: OverflowBox(
+                                  child: Image.asset(
+                                    'assets/images/interlagos.png',
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],

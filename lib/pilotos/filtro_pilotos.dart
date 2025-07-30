@@ -1,0 +1,23 @@
+List<String> nomeSelecionados = [
+  "Fernando ALONSO",
+  "Alexander ALBON",
+  "Franco COLAPINTO",
+  "Jack DOOHAN",
+  "Pierre GASLY",
+  "Lewis HAMILTON",
+  "Nico HULKENBERG",
+  "Liam LAWSON",
+  "Lando NORRIS",
+  "Esteban OCON",
+  "Oscar PIASTRI",
+  "George RUSSELL",
+  "Carlos SAINZ",
+  "Lance STROLL",
+  "Yuki TSUNODA",
+  "Max VERSTAPPEN",
+  "Charles LECLERC",
+  "Oliver BEARMAN",
+  "Isack HADJAR",
+  "Gabriel BORTOLETO",
+  "Kimi ANTONELLI"
+];

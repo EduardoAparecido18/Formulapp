@@ -5,21 +5,20 @@ class DetalhesPilotos extends StatelessWidget {
       {super.key,
       //required this.driverId,
       //required this.code,
-      required this.givenName,
-      required this.familyName,
-      required this.nationality,
-      //required this.dateOfBirth,
+      required this.first_name,
+      required this.full_name,
+      required this.team_name,
+      required this.country_code,
       //required this.url,
       required this.imagemPiloto,
       required this.descricaoPiloto});
 
   // final String driverId;
   //final String code;
-  final String givenName;
-  final String familyName;
-  final String nationality;
-  // final String dateOfBirth;
-  //final String url;
+  final String first_name;
+  final String full_name;
+  final String team_name;
+  final String country_code;
   final String imagemPiloto;
   final String descricaoPiloto;
 
@@ -42,7 +41,7 @@ class DetalhesPilotos extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "$givenName " "$familyName",
+              "$full_name",
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -52,7 +51,7 @@ class DetalhesPilotos extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "Nacionalida: $nationality",
+              "Nacionalida: $country_code",
               style: const TextStyle(
                 fontSize: 15,
               ),
