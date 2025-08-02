@@ -111,55 +111,70 @@ class _telaPilotosState extends State<telaPilotos> {
     return Scaffold(
         body: _pilotos.isEmpty
             ? const Center(child: CircularProgressIndicator()) // Carregando
-            : Container(
-                decoration: BoxDecoration(
-                  // ignore: use_full_hex_values_for_flutter_colors
-                  color: Theme.of(context).colorScheme.surface,
-                ),
-                child: ListView.builder(
-                  itemCount: _pilotos.length,
-                  itemBuilder: (context, index) {
-                    final piloto = _pilotos[index];
-                    final dadosExtras = driverImage[piloto.full_name];
-                    final iconePiloto = dadosExtras?['imagemDriver'] ?? "";
-                    final backgroundPilotos = coresPilotos[piloto.full_name];
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => EstatisPilotos(
-                                    team_name: piloto.team_name,
-                                    first_name: piloto.first_name,
-                                    full_name: piloto.full_name,
-                                    country_code: piloto.country_code,
-                                    imagemPiloto:
-                                        dadosExtras?['imagemDriver'] ?? "",
-                                    descricaoPiloto:
-                                        dadosExtras?['descricao'] ??
-                                            "Sem descrição disponivel")));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Container(
-                          height: 250,
-                          width: size.width,
-                          decoration: BoxDecoration(
-                              color: backgroundPilotos,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(piloto.full_name),
-                              Image.asset(iconePiloto, fit: BoxFit.contain),
-                            ],
+            : Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(color: Colors.black),
+                    child: ListView.builder(
+                      itemCount: _pilotos.length,
+                      itemBuilder: (context, index) {
+                        final piloto = _pilotos[index];
+                        final dadosExtras = driverImage[piloto.full_name];
+                        final iconePiloto = dadosExtras?['imagemDriver'] ?? "";
+                        final backgroundPilotos =
+                            coresPilotos[piloto.full_name] ?? Colors.grey;
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EstatisPilotos(
+                                        last_name: piloto.last_name,
+                                        corFundoPiloto: backgroundPilotos,
+                                        team_name: piloto.team_name,
+                                        first_name: piloto.first_name,
+                                        full_name: piloto.full_name,
+                                        country_code: piloto.country_code,
+                                        imagemPiloto:
+                                            dadosExtras?['imagemDriver'] ?? "",
+                                        descricaoPiloto:
+                                            dadosExtras?['descricao'] ??
+                                                "Sem descrição disponivel")));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Container(
+                              height: 250,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomLeft,
+                                    colors: [backgroundPilotos, Colors.black],
+                                  ),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20))),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    piloto.full_name,
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Image.asset(iconePiloto, fit: BoxFit.contain),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ));
   }
 }

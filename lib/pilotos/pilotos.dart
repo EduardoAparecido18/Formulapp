@@ -3,10 +3,12 @@ class Pilotos {
   final String full_name;
   final String team_name;
   final String country_code;
+  final String last_name;
 
   Pilotos({
     required this.first_name,
     required this.full_name,
+    required this.last_name,
     required this.team_name,
     required this.country_code,
   });
@@ -15,6 +17,7 @@ class Pilotos {
   factory Pilotos.fromJson(Map<String, dynamic> json) {
     return Pilotos(
       first_name: json["first_name"] ?? "",
+      last_name: json["last_name"] ?? "",
       full_name: json["full_name"] ?? "N/A", // Pode ser nulo, então tratamos
       team_name: json["team_name"] ?? "",
       country_code: json["country_code"] ?? "",
