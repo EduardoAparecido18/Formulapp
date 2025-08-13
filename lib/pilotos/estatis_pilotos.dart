@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'tela_pilotos.dart';
 
 class EstatisPilotos extends StatelessWidget {
-  const EstatisPilotos({
-    super.key,
-    required this.country_code,
-    required this.descricaoPiloto,
-    required this.first_name,
-    required this.full_name,
-    required this.imagemPiloto,
-    required this.team_name,
-    required this.corFundoPiloto,
-    required this.last_name,
-  });
+  const EstatisPilotos(
+      {super.key,
+      required this.country_code,
+      required this.descricaoPiloto,
+      required this.first_name,
+      required this.full_name,
+      required this.imagemPiloto,
+      required this.team_name,
+      required this.corFundoPiloto,
+      required this.last_name,
+      required this.titulos,
+      required this.vitorias,
+      required this.poles});
 
   final String first_name;
   final String full_name;
@@ -24,6 +26,9 @@ class EstatisPilotos extends StatelessWidget {
   final String imagemPiloto;
   final String descricaoPiloto;
   final Color corFundoPiloto;
+  final String titulos;
+  final String vitorias;
+  final String poles;
 
   @override
   Widget build(BuildContext context) {
@@ -116,21 +121,21 @@ class EstatisPilotos extends StatelessWidget {
                               children: [
                                 Icon(Icons.emoji_events,
                                     color: Colors.amberAccent),
-                                Text('TITULOS MUNDIAIS: ',
+                                Text('TITULOS MUNDIAIS: ${titulos}',
                                     style: TextStyle(color: Colors.white)),
                               ],
                             ),
                             Row(
                               children: [
                                 Icon(Icons.flag, color: Colors.amberAccent),
-                                Text('VITÓRIAS: ',
+                                Text('VITÓRIAS: ${vitorias}',
                                     style: TextStyle(color: Colors.white)),
                               ],
                             ),
                             Row(
                               children: [
                                 Icon(Icons.speed, color: Colors.amberAccent),
-                                Text('POLE POSITIONS: ',
+                                Text('POLE POSITIONS: ${poles}',
                                     style: TextStyle(color: Colors.white)),
                               ],
                             ),
@@ -138,7 +143,7 @@ class EstatisPilotos extends StatelessWidget {
                               children: [
                                 Icon(Icons.directions_car,
                                     color: Colors.amberAccent),
-                                Text('NÚMERO DE CORRIDAS: ',
+                                Text('EQUIPE: ${team_name}',
                                     style: TextStyle(color: Colors.white)),
                               ],
                             ),

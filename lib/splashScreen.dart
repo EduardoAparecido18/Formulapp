@@ -1,5 +1,5 @@
 import 'package:Formulapp/circuitos/tela_circuitos.dart';
-import 'package:Formulapp/construtores/tela_equipes.dart';
+import 'package:Formulapp/construtores/teamsScreen.dart';
 import 'package:Formulapp/pilotos/tela_pilotos.dart';
 import 'package:flutter/material.dart';
 
@@ -83,7 +83,7 @@ class SplashScreen extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => equipesTela()));
+                                      builder: (context) => Teamsscreen()));
                             },
                             child: Container(
                               height: screenHeight / 3.2,

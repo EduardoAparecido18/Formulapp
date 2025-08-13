@@ -1,4 +1,4 @@
-final Map<String, Map<String, String>> extrasEquipes = {
+final Map<String, dynamic> extrasEquipes = {
   "alpine": {
     "logoEquipe": "assets/images/alpine.png.png",
     "imagemCarro":

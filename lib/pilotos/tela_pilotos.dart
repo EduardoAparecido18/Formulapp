@@ -1,13 +1,12 @@
 import 'package:Formulapp/colors/equipesCores.dart';
-import 'package:Formulapp/pilotos/detalhes_pilotos.dart';
 import 'package:Formulapp/pilotos/estatis_pilotos.dart';
-import 'package:Formulapp/pilotos/imagem_pilotos.dart';
+import 'package:Formulapp/pilotos/sobre/DriversData.dart';
+import 'package:Formulapp/pilotos/sobre/imagem_pilotos.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'api_requisi.dart';
 import 'pilotos.dart';
-import 'package:Formulapp/pilotos/filtro_pilotos.dart';
-import 'package:Formulapp/colors/equipesCores.dart';
+import 'package:Formulapp/pilotos/sobre/filtro_pilotos.dart';
 
 // ignore: camel_case_types
 class telaPilotos extends StatefulWidget {
@@ -69,6 +68,7 @@ class _telaPilotosState extends State<telaPilotos> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var appBar = AppBar();
+    // ignore: unused_local_variable
     var tamanhoTela = (size.height - appBar.preferredSize.height) -
         MediaQuery.of(context).padding.top;
 
@@ -87,26 +87,6 @@ class _telaPilotosState extends State<telaPilotos> {
         ),
       );
     }
-    void mostrarDetalhes(BuildContext context, Pilotos piloto) {
-      final dadosExtras = driverImage[piloto.full_name];
-      final backgroundPilotos = coresPilotos[piloto.full_name] ?? Colors.pink;
-      showModalBottomSheet(
-          isScrollControlled: true,
-          context: context,
-          builder: (context) {
-            return FractionallySizedBox(
-                heightFactor: 0.8,
-                child: DetalhesPilotos(
-                  team_name: piloto.team_name,
-                  first_name: piloto.first_name,
-                  full_name: piloto.full_name,
-                  country_code: piloto.country_code,
-                  imagemPiloto: dadosExtras?['imagemDriver'] ?? "",
-                  descricaoPiloto:
-                      dadosExtras?['descricao'] ?? "Sem descrição disponivel",
-                ));
-          });
-    }
 
     return Scaffold(
         body: _pilotos.isEmpty
@@ -120,6 +100,7 @@ class _telaPilotosState extends State<telaPilotos> {
                       itemBuilder: (context, index) {
                         final piloto = _pilotos[index];
                         final dadosExtras = driverImage[piloto.full_name];
+                        final driverStatics = dadosPilotos[piloto.full_name];
                         final iconePiloto = dadosExtras?['imagemDriver'] ?? "";
                         final backgroundPilotos =
                             coresPilotos[piloto.full_name] ?? Colors.grey;
@@ -129,17 +110,24 @@ class _telaPilotosState extends State<telaPilotos> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => EstatisPilotos(
-                                        last_name: piloto.last_name,
-                                        corFundoPiloto: backgroundPilotos,
-                                        team_name: piloto.team_name,
-                                        first_name: piloto.first_name,
-                                        full_name: piloto.full_name,
-                                        country_code: piloto.country_code,
-                                        imagemPiloto:
-                                            dadosExtras?['imagemDriver'] ?? "",
-                                        descricaoPiloto:
-                                            dadosExtras?['descricao'] ??
-                                                "Sem descrição disponivel")));
+                                          last_name: piloto.last_name,
+                                          corFundoPiloto: backgroundPilotos,
+                                          team_name: piloto.team_name,
+                                          first_name: piloto.first_name,
+                                          full_name: piloto.full_name,
+                                          country_code: piloto.country_code,
+                                          imagemPiloto:
+                                              dadosExtras?['imagemDriver'] ??
+                                                  "",
+                                          descricaoPiloto:
+                                              dadosExtras?['descricao'] ??
+                                                  "Sem descrição disponivel",
+                                          titulos:
+                                              driverStatics?['titulos'] ?? "",
+                                          vitorias:
+                                              driverStatics?['vitorias'] ?? "",
+                                          poles: driverStatics?['pole'] ?? "",
+                                        )));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(12.0),
